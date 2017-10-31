@@ -3,7 +3,7 @@
 
 Dockerfiles enable you to create your own images. A Dockerfile describes the software that makes up an image. Dockerfiles contain a set of instructions that specify what environment to use and which commands to run.
 
-Creating a Dockerfile
+#### Creating a Dockerfile
 
 First, start with a fresh empty directory. This directory defines the context of the build, meaning it contains all of the things needed to build my image. 
 
@@ -51,7 +51,7 @@ print(encoder.get_ascii())
 
 `Run:docker build -t python-barcode`
 
-Run Your Image
+#### Run Your Image
 
 After your image has been built successfully, you can run it as a container. 
 
@@ -62,16 +62,21 @@ In your terminal, run the command `docker images` to view your images. You shoul
 
 You should see what looks like a large ASCII QR code.
 
-Alternatives
+#### Alternatives
 
 If you only need to run a simple script (with a single file), you can avoid writing a complete Dockerfile. In the examples below, assume you store `my_script.py` in `/usr/src/widget_app/`, and you want to name the container `my-first-python-script`:
 
-`Python 3:docker run -it --rm --name my-first-python-script -v "$PWD":/usr/src/widget_app python:3 python my_script.py`
-`Python 2:docker run -it --rm --name my-first-python-script -v "$PWD":/usr/src/widget_app python:2 python my_script.py`
+##### Python 3:
 
-Further information
+`docker run -it --rm --name my-first-python-script -v "$PWD":/usr/src/widget_app python:3 python my_script.py`
 
-Creating a Dockerfile
+##### Python 2:
+
+`docker run -it --rm --name my-first-python-script -v "$PWD":/usr/src/widget_app python:2 python my_script.py`
+
+#### Further information
+
+##### Creating a Dockerfile
 
 Make sure you do not append an extension to the Dockerfile (i.e., Docker does not recognize Dockerfile.txt).You do not have to read the contents of every Dockerfile you base yours on, but make sure to at least familiarize yourself with them; you can avoid trying to install redundant software (e.g., installing pip when the Python image already loads it), and you can make sure you write your `RUN` commands appropriately. Docker Hub does not enforce basing all images off only one distribution of Linux; if you use a Debian-based distribution (Debian, Ubuntu, Mint, etc.) you need to call `apt-get` to install software, and if you use a Red Hat-based distribution (Red Hat Enterprise Linux/RHEL, CentOS) you need to use yum. 
 
@@ -81,28 +86,28 @@ You might end up starting with an unfamiliar base image (i.e., if you primarily 
 
 Avoid putting any unused files in your build directory. Docker makes tarballs of everything in the current directory and sends that to the Docker daemon, so if you have unnecessary files, those are included.
 
-Alternatives
+#### Alternatives
 
 Do not attempt to run a script requiring dependencies using the Alternative method, unless those dependencies come with the bare Python installation.
 
-Deleting Docker Containers
+#### Deleting Docker Containers
 
 Run the following command from your docker console to see a list of your containers:
 
 `docker ps`
 
-# OR #
+or
 
 `docker ps -a`  # to see all containers, including those not running
 
 Note: Removing a Container is FINAL.
 
-Delete a Single Container
+#### Delete a Single Container
 Run `docker ps -a` and retrieve the container ID (an alphanumeric string, something like a39c259df462).
 
 Run `docker rm a39c259df462` to remove just that container.
 
-Delete All Your Containers
+#### Delete All Your Containers
 
 To delete all your containers, run:
 
@@ -110,22 +115,28 @@ To delete all your containers, run:
 
 -q prints only the container ID’s-a prints all containers passing all container IDs to xargs, docker rm deletes all containers
 
-Deleting Docker ImagesDelete a Single ImageRetrieve the Image ID using docker images (The Image IDs should be in the third column.)
+#### Deleting Docker Images
+
+##### Delete a Single Image
+
+Retrieve the Image ID using docker images (The Image IDs should be in the third column.)
 
 Run docker rmi <image_id>For example:
 
 `$ docker rmi 60959f29de3a`
 
-Delete All Untagged ImagesThis requires a little bit of Linux magic (like deleting all containers above). Docker marks images without tags with "<none>" so we need to process only those images. Run the following command from your terminal (the awk programming language gives you text manipulation tools):
+##### Delete All Untagged Images
+
+This requires a little bit of Linux magic (like deleting all containers above). Docker marks images without tags with "<none>" so we need to process only those images. Run the following command from your terminal (the awk programming language gives you text manipulation tools):
 
 `docker rmi $(docker images | grep "<none>" | awk '{print $3}')`
 
-Delete All Images
+#### Delete All Images
 
 To delete all of your images, you can simplify the command above:
 
 `docker rmi $(docker images | awk '{print $3}')`
 
-Delete Docker Containers
+#### Delete Docker Containers
 
 Usage:CommandDeletesallAll containers${id}The container corresponding to the container ID you passDelete Docker ImagesUsage:CommandDeletesallAll imagesuntaggedImages tagged with “" (untagged images)${id}The image corresponding to the Image ID you pass
