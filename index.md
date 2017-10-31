@@ -16,13 +16,13 @@ Docker CE for Mac is an easy-to-install desktop app for building, debugging, and
 Docker for Mac is a complete development environment deeply integrated with the Mac OS Hypervisor framework, networking, and filesystem. Docker for Mac is the fastest and most reliable way to run Docker on a Mac.
 
 #### Features and Benefits
-Easy installation and setup of a complete Docker development environment for the Mac.
-Integrated Docker platform and tools Docker command line, Docker Compose, and Docker Notary command line.Automatic updates with channels for monthly Edge and quarterly Stable versions of Docker.
-Fast and reliable performance with native macOS virtualization running a custom minimal Linux distro.
-Seamless volume mounting for code and data, including file change notifications that unlock fast edit-test cycles.
-Native Mac security with support for the Mac OS X sandbox security model.
-Enterprise network support allows Docker for Mac to with VPNs and proxies.
-In container development and debugging with supported IDEs.
+- Easy installation and setup of a complete Docker development environment for the Mac.
+- Integrated Docker platform and tools Docker command line, Docker Compose, and Docker Notary command line.Automatic updates with channels for monthly Edge and quarterly Stable versions of Docker.
+- Fast and reliable performance with native macOS virtualization running a custom minimal Linux distro.
+- Seamless volume mounting for code and data, including file change notifications that unlock fast edit-test cycles.
+- Native Mac security with support for the Mac OS X sandbox security model.
+- Enterprise network support allows Docker for Mac to with VPNs and proxies.
+- In container development and debugging with supported IDEs.
 
 #### InstallationSystem requirements
 Docker for Mac works on OS X El Capitan 10.11 and newer macOS releases.
