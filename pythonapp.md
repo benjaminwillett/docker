@@ -139,4 +139,8 @@ To delete all of your images, you can simplify the command above:
 
 #### Delete Docker Containers
 
-Usage:CommandDeletesallAll containers${id}The container corresponding to the container ID you passDelete Docker ImagesUsage:CommandDeletesallAll imagesuntaggedImages tagged with “" (untagged images)${id}The image corresponding to the Image ID you pass
+Usage:CommandDeletesallAll containers${id}The container corresponding to the container ID you pass
+
+#### Delete Docker Images
+
+Usage:CommandDeletesallAll imagesuntaggedImages tagged with “" (untagged images)${id}The image corresponding to the Image ID you pass
