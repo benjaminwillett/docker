@@ -47,6 +47,7 @@ RUN pip install -r requirements.txt
 CMD python app.py
 
 Build it: docker build -t compose-flask .
+```
 
 #### Define Your Services
 
@@ -86,7 +87,7 @@ Start the application from your directory:
 $ docker-compose up
 ```
 
-If you have localhost access to your host (i.e., you do not use a remote solution to deploy Docker), point your browser to http://0.0.0.0:5000, http://127.0.0.1:5000, or http://localhost:5000. On a Mac, you need to use docker-machine ip MACHINE_VM to get your Docker host’s IP address (then use that address like http://MACHINE_IP:5000 to access your web page). If you do use a remote host, simply use that IP address and append :5000 to the end.You should see:This Compose/Flask demo has been viewed 1 time(s).
+If you have localhost access to your host (i.e., you do not use a remote solution to deploy Docker), point your browser to http://0.0.0.0:5000, http://127.0.0.1:5000, or http://localhost:5000. On a Mac, you need to use `docker-machine ip MACHINE_VM` to get your Docker host’s IP address (then use that address like http://MACHINE_IP:5000 to access your web page). If you do use a remote host, simply use that IP address and append :5000 to the end.You should see:This Compose/Flask demo has been viewed 1 time(s).
 When you refresh, you should see:
 
 This Compose/Flask demo has been viewed 2 time(s).
