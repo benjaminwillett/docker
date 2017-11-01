@@ -87,17 +87,41 @@ Start the application from your directory:
 $ docker-compose up
 ```
 
-If you have localhost access to your host (i.e., you do not use a remote solution to deploy Docker), point your browser to http://0.0.0.0:5000, http://127.0.0.1:5000, or http://localhost:5000. On a Mac, you need to use `docker-machine ip MACHINE_VM` to get your Docker host’s IP address (then use that address like http://MACHINE_IP:5000 to access your web page). If you do use a remote host, simply use that IP address and append :5000 to the end.You should see:This Compose/Flask demo has been viewed 1 time(s).
+If you have localhost access to your host (i.e., you do not use a remote solution to deploy Docker), point your browser to http://0.0.0.0:5000, http://127.0.0.1:5000, or http://localhost:5000. 
+
+On a Mac, you need to use `docker-machine ip MACHINE_VM` to get your Docker host’s IP address (then use that address like `http://MACHINE_IP:5000` to access your web page). If you do use a remote host, simply use that IP address and append `:5000` to the end.
+
+You should see:
+
+`This Compose/Flask demo has been viewed 1 time(s).`
+
 When you refresh, you should see:
 
-This Compose/Flask demo has been viewed 2 time(s).
+`This Compose/Flask demo has been viewed 2 time(s).`
 
-Each time you refresh, the number should increment.Stop the application with CTRL+C (read below under “Common Issues” for more information) and refresh the page. You should receive something to the effect of This site can't be reached.Restart the application with docker-compose up -d. Redis resets the count and you should see:This Compose/Flask demo has been viewed 1 time(s).
-Use docker-compose ps and you should get similar results:        Name                      Command               State           Ports
+Each time you refresh, the number should increment.
+
+Stop the application with `CTRL+C` (read below under “Common Issues” for more information) and refresh the page. You should receive something to the effect of `This site can't be reached`.
+
+Restart the application with `docker-compose up -d`. 
+
+Redis resets the count and you should see:
+
+`This Compose/Flask demo has been viewed 1 time(s).`
+
+Use `docker-compose ps` and you should get similar results:
+
+```
+Name                      Command               State           Ports
 --------------------------------------------------------------------------------------
 composeflask_redis_1   docker-entrypoint.sh redis ...   Up      6379/tcp
 composeflask_web_1     /bin/sh -c python app.py         Up      0.0.0.0:5000->5000/tcp
 Run docker-compose stop to stop the containers:$ docker-compose stop
 Stopping composeflask_web_1 ... done
 Stopping composeflask_redis_1 ... done
-Common IssuesStarting and StoppingIf you run docker-compose up -d, you need to run docker-compose stop to stop the services when you finish. If you did not, you can stop the service with CTRL+C (hit once to gracefully stop and twice to force kill the containers). If you do not run in the background, you can view the calls made to your container.
+```
+
+#### Common Issues
+##### Starting and Stopping
+
+If you run `docker-compose up -d`, you need to run `docker-compose stop` to stop the services when you finish. If you did not, you can stop the service with `CTRL+C` (hit once to gracefully stop and twice to force kill the containers). If you do not run in the background, you can view the calls made to your container.
