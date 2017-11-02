@@ -33,4 +33,9 @@ Double-click `Docker.dmg` to start the install process.When the installation com
 ### Run it
 Open a command-line terminal, and try out some Docker commands.Run docker version to check that you have the latest release installed.Run docker run hello-world to verify that Docker is pulling images and running as expected.
 
-Install itDouble-click Docker.dmg to start the install process.When the installation completes and Docker starts, the whale in the top status bar shows that Docker is running, and accessible from a terminal.
+#### Install it
+Double-click Docker.dmg to start the install process.When the installation completes and Docker starts, the whale in the top status bar shows that Docker is running, and accessible from a terminal.
+
+- Python App[pythonapp.md]
+- Flask App[flaskapp.md]
+- Docker compose[compose.md]
