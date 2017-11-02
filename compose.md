@@ -1,7 +1,10 @@
 
 ### Docker Compose with Flask Apps
 
-Docker Compose simplifies multi-container Docker environments on a single host. Let’s put together a basic web app with Docker Compose and Flask using Redis (we end up with a Python/Flask container and a Redis container all on one host). We do not need custom networking or to design our own networks to run on; Compose does everything for us!Set Up Your HostInstall Docker Engine and Docker Compose (unless you have them already); review Introduction to Docker Compose if you need help.You’ll need a directory for your project on your host machine:
+Docker Compose simplifies multi-container Docker environments on a single host. Let’s put together a basic web app with Docker Compose and Flask using Redis (we end up with a Python/Flask container and a Redis container all on one host). We do not need custom networking or to design our own networks to run on; Compose does everything for us!
+
+#### Set Up Your Host
+Install Docker Engine and Docker Compose (unless you have them already); review Introduction to Docker Compose if you need help.You’ll need a directory for your project on your host machine:
 
 ```
 $ mkdir compose_flask
