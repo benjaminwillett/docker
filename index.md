@@ -36,7 +36,7 @@ Open a command-line terminal, and try out some Docker commands. Run `docker vers
 #### Install it
 Double-click `Docker.dmg` to start the install process. When the installation completes and Docker starts, the whale in the top status bar shows that Docker is running, and accessible from a terminal.
 
-- [Python App](pythonapp.md)
-- [Flask App](flaskapp.md)
+- [Dockerize your Python App](pythonapp.md)
+- [Dockerize your Flask App](flaskapp.md)
 - [Docker compose](compose.md)
 - [Database compose](databasecompose.md)
